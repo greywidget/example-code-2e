@@ -75,3 +75,6 @@ target/
 
 # PyCharm
 .idea/
+
+# My example testing file
+play.py
