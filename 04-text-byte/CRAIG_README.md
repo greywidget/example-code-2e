@@ -33,7 +33,8 @@ def shave_marks(txt):
 ```
 I was confused about the return as I couldn't see there was anything to combine back, which is to say that I think `shaved == unicodedata.normalize('NFC', shaved)` which was certainly the case for the given doctests.  
 I think that perhaps the normalize using "NFC" was simply done as a "good practice" as he mentions on pdf page 252:
-*However, to be safe, it may be good to normalize strings with normalize('NFC' user_text) before saving*
+*However, to be safe, it may be good to normalize strings with normalize('NFC' user_text) before saving*  
+That said, if you look at the *ohm example* on page 252 you can see that `normalize("NFC", ohm)` does actually change the character from `OHM SIGN` to `GREEK CAPITAL LETTER OMEGA` and so it's not all about combining diacritics.
 
 I was also a bit confused by the following example:
 ```

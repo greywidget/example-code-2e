@@ -2,4 +2,5 @@ nbval==0.10.0
 notebook==7.0.4
 numpy==1.26.0
 pytest==7.4.2
+pyuca==1.2
 rich==13.6.0
