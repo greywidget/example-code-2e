@@ -54,3 +54,22 @@ def shave_marks_latin(txt):
     return unicodedata.normalize('NFC', shaved)   # <5>
 ```
 as at first look it looks odd that `latin_base` is tested before it is evaluated. However debugging made me see that when you hit a *combining* character, you want to know if the *preceeding non-combining* character was latin or not. So the code is good.
+
+## Some unicode basics
+- Have a look at [Unconfusing Unicode](https://regebro.wordpress.com/2011/03/23/unconfusing-unicode-what-is-unicode/)
+
+- `Ord(char)` will give you the Code Point for a character
+- `Hex(Ord(char))` gives you the hex value which is also the unicode number e.g. `0x6df1` is `U+6DF1`
+- You can go from the hex value to int to char but you must remember to specify base 16: `chr(int('0x6df1', 16))`
+
+```
+>>> char = "深"
+>>> ord(char)
+28145
+>>> hex(ord(char))
+'0x6df1'
+>>> unicodedata.name(char)
+'CJK UNIFIED IDEOGRAPH-6DF1'
+>>> chr(int('0x6df1', 16))
+'深'
+```
