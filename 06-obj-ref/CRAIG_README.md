@@ -29,3 +29,8 @@ Looking further into it, in this example, what it means is:
                     - `special variables`
                         - `__defaults__: (["Carrie"],)`
                         
+Or, to put it another way, having created `bus2 = HauntedBus()`
+```
+>>> vars()["HauntedBus"].__init__.__defaults__[0] is bus2.passengers
+True
+```
